@@ -30,3 +30,7 @@ const solve = async (arguments) => {
 
   await solveCaptchas()
 }
+
+if(typeof arguments !== 'undefined'){
+  solve(arguments)
+}
