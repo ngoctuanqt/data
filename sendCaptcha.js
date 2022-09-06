@@ -22,14 +22,11 @@ const solve = async (arguments) => {
 
     const reqObj = result.find( r => r.callback)
     console.log(reqObj.callback)
+    console.log(reqObj.sitekey)
     reqObj.callback("${response}")
   }
    
-  const [response] = arguments
+  const response = arguments
 
   await solveCaptchas()
-}
-
-if(typeof arguments !== 'undefined'){
-  solve(arguments)
 }
