@@ -70,12 +70,14 @@ if(true){
     iimDisplay("Adding payment...");
     retcode = iimPlay("AddPayment.iim");
 
+    iimSet("mEmail", "%s");
+    iimSet("mPass", "%s");
     iimDisplay("Confirming mail...");
     if(%s) // isHotmail
     {
         iimPlay("ConfirmMail.iim");
         var link = iimGetExtract();
-        alert(link);
+        //alert(link);
     }
     else{ // rumail
         iimPlay("ConfirmMailRU.iim");
@@ -103,7 +105,7 @@ if(true){
 
         }
     }
-    alert(report);
+    //alert(report);
 }
 else{
     iimDisplay("Register RedBubble Failled!!!");
