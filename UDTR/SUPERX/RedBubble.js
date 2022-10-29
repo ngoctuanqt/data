@@ -86,10 +86,11 @@ if(true){
     // Upload
     for(var i=1;i<=%d;i++){ //uploadNumber
         try {
-            code="SET !DATASOURCE %s\n"; //dataPath
+            code="SET !DATASOURCE_DELIMITER ;\n";
+            code+="SET !DATASOURCE %s\n"; //dataPath
             code+="SET !DATASOURCE_LINE "+i+"\n";
             code+="SET !DATASOURCE_COLUMNS 1\n";
-            code+="SET !EXTRACT {{!COL1}}";
+            code+="SET !EXTRACT {{!COL1}}+\"|:|\"+{{!COL2}}+\"|:|\"+{{!COL3}}+\"|:|\"+{{!COL4}}";
             iimPlayCode(code);
             var camp=iimGetExtract().split('|:|');
             iimSet("mImage", camp[0]);
