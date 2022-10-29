@@ -72,7 +72,7 @@ if(true){
     retcode = iimPlay("AddPayment.iim");
 
     iimDisplay("Confirming mail...");
-    if(true) // hotmail
+    if(%s) // isHotmail
     {
         iimPlay("ConfirmMail.iim");
         var link = iimGetExtract();
@@ -82,9 +82,9 @@ if(true){
         iimPlay("ConfirmMailRU.iim");
     }
     // Upload
-    for(var i=1;i<=%d;i++){
+    for(var i=1;i<=%d;i++){ //uploadNumber
         try {
-            code="SET !DATASOURCE %s\n";
+            code="SET !DATASOURCE %s\n"; //dataPath
             code+="SET !DATASOURCE_LINE "+i+"\n";
             code+="SET !DATASOURCE_COLUMNS 1\n";
             code+="SET !EXTRACT {{!COL1}}";
@@ -92,9 +92,9 @@ if(true){
             var camp=iimGetExtract().split('|:|');
             iimSet("mImage", camp[0]);
             iimSet("mTitle", camp[1]);
-            iimSet("mDesc", camp[1]);
-            iimSet("mTags", camp[2]);
-            alert(camp[2]);
+            iimSet("mDesc", camp[2]);
+            iimSet("mTags", camp[3]);
+            // alert(camp[3]);
             report += camp[1] + ":";
             iimDisplay("Uploading image ("+ i +"): "+camp[1]);
             retcode = iimPlay("UploadRed.iim");
