@@ -110,5 +110,4 @@ else{
     iimDisplay("iimGetLastError = " + iimGetLastError());
 }
 
-
 window.close();
