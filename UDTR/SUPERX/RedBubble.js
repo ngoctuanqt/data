@@ -72,14 +72,15 @@ if(true){
 
     iimSet("mEmail", "%s");
     iimSet("mPass", "%s");
-    iimDisplay("Confirming mail...");
     if(%s) // isHotmail
     {
+        iimDisplay("Confirming mail...");
         iimPlay("ConfirmMail.iim");
         var link = iimGetExtract();
         //alert(link);
     }
     else{ // rumail
+        iimDisplay("Confirming mail RU...");
         iimPlay("ConfirmMailRU.iim");
     }
     // Upload
