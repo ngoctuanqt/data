@@ -1,4 +1,3 @@
-"""
 function loadScriptFromURL(url) {
     var request = Components.classes['@mozilla.org/xmlextras/xmlhttprequest;1'].createInstance(Components.interfaces.nsIXMLHttpRequest),
     async = false;
@@ -113,5 +112,3 @@ else{
 
 
 window.close();
-
-"""
